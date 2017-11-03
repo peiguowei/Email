@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Json练习</title>
+    <script>
+        /*
+          JSON.stringify(js对象)将js对象或json对象转成字符串
+          JSON.parse(字符串) 将符合json格式的字符串转成json对象
+         */
+        /*待匹配的登录信息*/
+        var userStr='{"id":"1","name":"wang","password":"123"}'
+        var user = JSON.parse(userStr);
+        function showLogin() {
+            var div = document.getElementById("login");
+            div.style.display="block";
+        }
+        function login() {
+           var error = document.getElementById("error");
+            var name = document.getElementById("name");
+            var password = document.getElementById("password");
+            if(name!=user.name){
+               error.val("用户名错误")
+                return;
+            }
+            if(!password!=user.password){
+                error.val("密码错误")
+                return;
+            }
+            var div = document.getElementById("login");
+            div.style.display="none"
+            var span = document.getElementById("lo");
+            span.style.display="none"
+            var loginName = document.getElementById("loginName");
+            loginName.value(user.name)
+        }
+    </script>
+</head>
+<body >
+<span onclick="showLogin()" style="cursor: pointer;display: block" id="lo">登录</span>
+<h6 id="loginName"></h6>
+<div style="display: none" id="login">
+    <h6 id="error"></h6>
+    <form>
+        用户名：<input name="name" id="name">
+        密码：<input  name="password" id="password">
+        <button type="button" onclick="login()">登录</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

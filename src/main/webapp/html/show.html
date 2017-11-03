@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+</head>
+<body>
+<hr style="border-color:#FFFFFF"/>
+<div style="background-color: #f3f7ff">
+    <h4><strong>${requestScope.emailMessageContent.title}</strong></h4>
+    <p style="color: #9d9d9d">发件人:${requestScope.emailMessageContent.sendName}</p>
+    <p style="color: #9d9d9d">时间:${requestScope.emailMessageContent.date}</p>
+    <p style="color: #9d9d9d">收件人:${requestScope.emailMessageContent.collectName}</p>
+</div>
+<hr style="border-color:#FFFFFF"/>
+<div id="top">
+    <script>
+        $("#top").load("/emailText/${}")
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.email.dao.IEmailMessageDao">
+    <resultMap id="emailMap" type="com.demo.email.entity.EmailMessage">
+        <id property="id" column="id"/>
+        <result property="sendEmailId" column="send_email_id"/>
+        <result property="collectEmailId" column="collect_email_id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="state" column="state"/>
+        <result property="sendDate" column="send_date"/>
+        <result property="readDate" column="read_date"/>
+    </resultMap>
+    <insert id="saveEmailMessage">
+        INSERT INTO email_message(send_email_id,collect_email_id,title,content,state,send_date,read_date)VALUES(
+          #{sendEmailId},#{collectEmailId},#{title},#{content},#{state},#{sendDate},#{readDate}
+        )
+    </insert>
+    <select id="selectEmailByCollectId" resultMap="emailMap">
+        SELECT * FROM email_message WHERE collect_email_id=#{collerctEmailId} AND state='SUCCESS'
+    </select>
+    <select id="selectEmailMessageById" resultMap="emailMap">
+        SELECT * FROM email_message WHERE id=#{id}
+    </select>
+</mapper>
