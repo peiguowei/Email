@@ -12,6 +12,8 @@
         <result property="state" column="state"/>
         <result property="sendDate" column="send_date"/>
         <result property="readDate" column="read_date"/>
+        <result property="sendName" column="send_name"/>
+        <result property="collectName" column="collect_name"/>
     </resultMap>
     <insert id="saveEmailMessage">
         INSERT INTO email_message(send_email_id,collect_email_id,title,content,state,send_date,read_date)VALUES(

@@ -4,10 +4,17 @@ package com.demo.email.entity;
 
 /**
  * 用户信息
+ * @author peizi
  */
 public class User {
-    private Integer id;//用户唯一编号
-    private String email;//用户姓名
+    /**
+    *主键ID
+     */
+    private Integer id;
+    /**
+     * 用户姓名
+     */
+    private String email;
     private String password;//用户密码
     private Integer age;//用户年龄
     private Boolean gender;//用户性别

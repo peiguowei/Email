@@ -21,7 +21,7 @@
         <!--数据库用户名-->
         <property name="username" value="root" />
         <!--数据库密码-->
-        <property name="password" value="12345" />
+        <property name="password" value="123456" />
         <!-- 初始化连接大小 -->
         <property name="initialSize" value="0"></property>
         <!-- 连接池最大数量 -->
