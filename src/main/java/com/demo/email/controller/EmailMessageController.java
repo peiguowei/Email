@@ -30,7 +30,7 @@ public class EmailMessageController {
     @Resource
     private UserService userService;
 
-    //处理保存草稿
+    /*  */
     @RequestMapping(path = "/saveDraft", method = RequestMethod.POST, produces = "Application/json;charset=utf-8")
     @ResponseBody
     public String saveDraft(String recipients, Integer sendEmailId, String title, String content, HttpServletRequest req) {
@@ -119,7 +119,9 @@ public class EmailMessageController {
         return user.getEmail();
     }
 
-    //处理保存发送邮件
+    // 处理保存发送邮件
+
+
     @RequestMapping(path = "/saveEmail", method = RequestMethod.POST, produces = "Application/json;charset=utf-8")
     @ResponseBody
     public String saveEmail(String recipients, Integer sendEmailId, String title, String content, HttpServletRequest req) {

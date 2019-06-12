@@ -24,12 +24,13 @@ import java.util.UUID;
 
 /**
  * 用户注册
+ * @author pei
  */
 @Controller("userController")
 public class RegisterController {
     @Resource
     private UserService userService;
-    //用户注册  @RequestParam(required = false)参数可以为空
+    // 用户注册  @RequestParam(required = false)参数可以为空
     @RequestMapping(path = "/register",method = RequestMethod.POST)
     public String register(String email, String password1, Integer age, Boolean gender,
                            @RequestParam(required = false)String[] hobbies, MultipartFile file, HttpServletRequest req){
@@ -45,9 +46,17 @@ public class RegisterController {
         }
         return "register";
     }
-    //用户登录
+
+    /**
+     * 用户登录
+     * @ResponseBody 不归视图管
+     * @param emailName 邮箱名
+     * @param password 密码
+     * @param req
+     * @return
+     */
     @RequestMapping(path = "/login",method = RequestMethod.POST,produces ="application/json; charset=utf-8")
-    @ResponseBody//不归视图管
+    @ResponseBody
     public Map login(String emailName, String password, HttpServletRequest req){
         HashMap<String, Object> result = new HashMap<>();
         User user=new User();
