@@ -3,6 +3,7 @@ package com.demo.email.controller;
 import com.demo.email.entity.User;
 import com.demo.email.service.UserService;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,11 +24,10 @@ import java.util.UUID;
 
 /**
  * 用户注册
- * @author pei
  */
 @Controller("userController")
 public class RegisterController {
-    @Resource
+    @Autowired
     private UserService userService;
     // 用户注册  @RequestParam(required = false)参数可以为空
     @RequestMapping(path = "/register",method = RequestMethod.POST)
