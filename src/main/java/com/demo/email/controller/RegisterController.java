@@ -24,6 +24,7 @@ import java.util.UUID;
 
 /**
  * 用户注册
+ * @author peiguowei
  */
 @Controller("userController")
 public class RegisterController {

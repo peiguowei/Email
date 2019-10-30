@@ -22,6 +22,7 @@ import java.util.UUID;
 
 /**
  * 邮箱信息控制层
+ * @author peiguowei
  */
 @Controller("emailController")
 public class EmailMessageController {
@@ -30,7 +31,15 @@ public class EmailMessageController {
     @Resource
     private UserService userService;
 
-    /*  */
+    /**
+     *
+     * @param recipients
+     * @param sendEmailId
+     * @param title
+     * @param content
+     * @param req
+     * @return
+     */
     @RequestMapping(path = "/saveDraft", method = RequestMethod.POST, produces = "Application/json;charset=utf-8")
     @ResponseBody
     public String saveDraft(String recipients, Integer sendEmailId, String title, String content, HttpServletRequest req) {
