@@ -30,7 +30,18 @@ import java.util.UUID;
 public class RegisterController {
     @Autowired
     private UserService userService;
-    // 用户注册  @RequestParam(required = false)参数可以为空
+
+    /**
+     * 用户注册  @RequestParam(required = false)参数可以为空
+     * @param email
+     * @param password1
+     * @param age
+     * @param gender
+     * @param hobbies
+     * @param file
+     * @param req
+     * @return
+     */
     @RequestMapping(path = "/register",method = RequestMethod.POST)
     public String register(String email, String password1, Integer age, Boolean gender,
                            @RequestParam(required = false)String[] hobbies, MultipartFile file, HttpServletRequest req){
