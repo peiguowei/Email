@@ -24,6 +24,7 @@ import java.util.UUID;
 
 /**
  * 用户注册
+ *
  * @author peiguowei
  */
 @Controller("userController")
@@ -33,6 +34,7 @@ public class RegisterController {
 
     /**
      * 用户注册  @RequestParam(required = false)参数可以为空
+     *
      * @param email
      * @param password1
      * @param age
@@ -42,17 +44,17 @@ public class RegisterController {
      * @param req
      * @return
      */
-    @RequestMapping(path = "/register",method = RequestMethod.POST)
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
     public String register(String email, String password1, Integer age, Boolean gender,
-                           @RequestParam(required = false)String[] hobbies, MultipartFile file, HttpServletRequest req){
-        User user=new User();
+                           @RequestParam(required = false) String[] hobbies, MultipartFile file, HttpServletRequest req) {
+        User user = new User();
         user.setEmail(email);
         user.setPassword(password1);
         user.setAge(age);
         user.setGender(gender);
         user.setHobbies(Arrays.toString(hobbies));
-        boolean userEmail = userService.registerService(user, req,file);
-        if (userEmail){
+        boolean userEmail = userService.registerService(user, req, file);
+        if (userEmail) {
             return "content";
         }
         return "register";
@@ -60,22 +62,23 @@ public class RegisterController {
 
     /**
      * 用户登录
-     * @ResponseBody 不归视图管
+     *
      * @param emailName 邮箱名
-     * @param password 密码
+     * @param password  密码
      * @param req
      * @return
+     * @ResponseBody 不归视图管
      */
-    @RequestMapping(path = "/login",method = RequestMethod.POST,produces ="application/json; charset=utf-8")
+    @RequestMapping(path = "/login", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     @ResponseBody
-    public Map login(String emailName, String password, HttpServletRequest req){
+    public Map login(String emailName, String password, HttpServletRequest req) {
         HashMap<String, Object> result = new HashMap<>();
-        User user=new User();
+        User user = new User();
         user.setEmail(emailName);
         user.setPassword(password);
         String userLogin = userService.loginService(user, req);
-        result.put("message",userLogin);
-        result.put("user",user);
+        result.put("message", userLogin);
+        result.put("user", user);
         return result;
     }
 }
