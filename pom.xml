@@ -50,21 +50,21 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入spring context 上下文组件 承上启下-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入beans  映射组件-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入mybatis支持spring-->
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -86,28 +86,28 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入spring 事物相关 tx-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入spring web网站相关-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入spring MVC相关-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.18.RELEASE</version>
+            <version>4.3.20.RELEASE</version>
         </dependency>
         <!--导入javax servlet服务组件 tomcat-->
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
